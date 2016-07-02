@@ -1,0 +1,40 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: redfast00
+email: redfast00@gmail.com
+
+#write html inside the double quotes to display in jumbotron
+description: "<h1>Hack all the things!</h1><h3>A security and programming blog</h3>"
+
+
+permalink: /:month-:day-:year/:title.html
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://redfast00.github.io" # the base hostname & protocol for your site
+twitter_username: redfast00
+github_username:  redfast00
+
+# Build settings
+markdown: kramdown
+kramdown:
+    input: GFM
+    hard_wrap: false
+gems:
+    - jekyll-gist
+whitelist:
+  - jekyll-coffeescript
+  - jekyll-gist
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+    noscript: false
