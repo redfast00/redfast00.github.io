@@ -26,12 +26,14 @@ kramdown:
     hard_wrap: false
 gems:
     - jekyll-gist
+    - jekyll-sitemap
 whitelist:
   - jekyll-coffeescript
   - jekyll-gist
   - jekyll-mentions
   - jekyll-paginate
   - jekyll-redirect-from
+  - jekyll-sitemap
 lsi: false
 safe: true
 incremental: false
