@@ -23,6 +23,8 @@
         {% endif %}
 
         {% endfor %}
+        <li><a href='{{"/feed.xml" | prepend: site.url }}' type="application/rss+xml">RSS <i class="fa fa-rss" aria-hidden="true"></i>
+</a></li>
 
 
       </ul>
