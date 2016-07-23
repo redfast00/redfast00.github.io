@@ -13,6 +13,8 @@ This means that if you for example sell 200 lanterns, the global price for lante
 [the law of supply and demand](https://en.wikipedia.org/wiki/Supply_and_demand)).
 The goal today will be to reverse engineer how transactions get sent to the priceserver and make some fake transactions to change the global price.
 
+![Normal tradeportal](/assets/tradeportal_normal.min.png){: .post-image .center}
+
 # 1. Recon
 
 ## How prices get modified
@@ -51,6 +53,8 @@ mitmdump -T -q -s "rich.py"
 ```
 
 {% gist redfast00/7d7ad28a7995ff81b8d62e3c7c982669 %}
+
+![Cheap tradeportal](/assets/tradeportal_cheap.min.png){: .post-image .center}
 
 Awesome, it worked. I can now buy as much jetpacks as I want, but all other players still have to pay full price... 
 That doesn't seem too fair, so I wanted to make jetpacks *really* cheap.
