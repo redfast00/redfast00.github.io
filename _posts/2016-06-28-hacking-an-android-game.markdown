@@ -8,17 +8,17 @@ tags: [Android, Reversing]
 ## About this app
 On a rainy Saturday I was bored so I decided to reverse some parts of my favorite Android game: [The Blockheads](https://play.google.com/store/apps/details?id=com.noodlecake.blockheads).
 The Blockheads is a Minecraft-like game that lets you explore the world, mine for resources, build structures, craft some items and sell them in a trade portal for in-game currency.
-Selling and buying items does not only affect your price, but also affects the **global** trade portal price. 
-This means that if you for example sell 200 lanterns, the global price for lanterns will go down and lanterns will become cheaper for everyone (according to 
+Selling and buying items does not only affect your price, but also affects the **global** trade portal price.
+This means that if you for example sell 200 lanterns, the global price for lanterns will go down and lanterns will become cheaper for everyone (according to
 [the law of supply and demand](https://en.wikipedia.org/wiki/Supply_and_demand)).
 The goal today will be to reverse engineer how transactions get sent to the priceserver and make some fake transactions to change the global price.
 
-![Normal tradeportal](/assets/tradeportal_normal.min.png){: .post-image .center}
+![Normal tradeportal](/assets/images/tradeportal_normal.min.png)
 
 # 1. Recon
 
 ## How prices get modified
-I set up a [wireless MitM access point]({% post_url 2016-06-26-setting-up-a-rogue-AP %}). 
+I set up a [wireless MitM access point]({% post_url 2016-06-26-setting-up-a-rogue-AP %}).
 I then fired up Wireshark and looked at the packets and noticed two types of HTTP requests to `priceserver.theblockheads.net`:
 
 + HTTP GET request to `/get_prices_v2.php`. The server responded with a JSON object full of itemIDs and prices.
@@ -45,7 +45,7 @@ There was one problem: I had no idea what item corresponded to what itemID. Afte
 
 ## Intercepting and modifying prices client side
 Since the GET requests are served over HTTP (unencrypted/unauthenticated), I could just MitM the GET requests,
-change some prices and forward the modified packets to device. I quickly banged up a mitmproxy python script that sets the price of stone 
+change some prices and forward the modified packets to device. I quickly banged up a mitmproxy python script that sets the price of stone
 high and all other prices ridiculously low:
 
 ```bash
@@ -54,9 +54,9 @@ mitmdump -T -q -s "rich.py"
 
 {% gist redfast00/7d7ad28a7995ff81b8d62e3c7c982669 %}
 
-![Cheap tradeportal](/assets/tradeportal_cheap.min.png){: .post-image .center}
+![Cheap tradeportal](/assets/images/tradeportal_cheap.min.png)
 
-Awesome, it worked. I can now buy as much jetpacks as I want, but all other players still have to pay full price... 
+Awesome, it worked. I can now buy as much jetpacks as I want, but all other players still have to pay full price...
 That doesn't seem too fair, so I wanted to make jetpacks *really* cheap.
 
 # 3. Server-side exploitation
@@ -80,7 +80,7 @@ mitmdump -n -c transactions.flow -s "send_prices_first_try.py 17 200"
 
 Crap, that didn't modify the global price... I apparently overlooked something.
 
-After making some more transactions from my test device, I figured out that there was an HTTP `Hash` 
+After making some more transactions from my test device, I figured out that there was an HTTP `Hash`
 header which was different in every POST request. Since I could just replay requests, the `Hash` header probably wasn't time-sensitive.
 In order to figure out how the Hash value was generated, I tried to reverse engineer the app.
 
@@ -98,7 +98,7 @@ I then unpacked the app using [apktool](http://ibotpeaches.github.io/Apktool/).
 apktool d ~/TheBlockheads-1.6.1.apk ~/blockheads/unpacked
 ```
 
-While inspecting the unpacked app director, I noticed that the `AndroidManifest.xml` 
+While inspecting the unpacked app director, I noticed that the `AndroidManifest.xml`
 contained a bunch of keys that contained "apportable":
 
 ```xml
@@ -114,7 +114,7 @@ contained a bunch of keys that contained "apportable":
 <meta-data android:name="apportable.abi_list" android:value="armv7a armv7a-neon" />
 ```
 
-I concluded that the app was probably built using [apportable](http://www.apportable.com/) and was 
+I concluded that the app was probably built using [apportable](http://www.apportable.com/) and was
 (according to apportable’s home page) written in Objective-C or Swift.
 This means that the juicy parts of the app are probably inside native libraries. And indeed:
 
@@ -205,4 +205,4 @@ mitmdump -n -c transactions.flow -s 'send_prices.py 17 200'
 
 The price of lanterns went up: it worked! I am now able to modify prices without actually buying anything. Mission accomplished.
 
-![Jetpacks for everyone](/assets/oprah_giving.min.jpg){: .post-image .center}
+![Jetpacks for everyone](/assets/images/oprah_giving.min.jpg)

@@ -1,3 +1,7 @@
-https://redfast00.github.io
+# A security and programming blog
 
-Theme by Hemang Kumar
+Topics include:
+  - reverse engineering Android apps
+  - reverse engineering native libraries
+
+https://redfast00.github.io

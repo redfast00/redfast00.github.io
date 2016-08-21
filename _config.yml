@@ -1,42 +1,55 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Site settings
-title: redfast00
-email: redfast00@gmail.com
+# SEO settings
+title: "redfast00 "
+title2: "blog"
+description: "A security and programming blog"
+keywords: "Android, hacking, reverse engineering, linux"
+url: https://redfast00.github.io
+baseurl: null
 
-#write html inside the double quotes to display in jumbotron
-description: "<h1>Hack all the things!</h1><h3>A security and programming blog</h3>"
-
-
-permalink: /:month-:day-:year/:title.html
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://redfast00.github.io" # the base hostname & protocol for your site
-twitter_username: redfast00
-github_username:  redfast00
+repo: http://github.com/heiswayi/thinkspace
+twitter_username: "redfast00"
 
 # Build settings
-markdown: kramdown
-kramdown:
-    input: GFM
-    hard_wrap: false
+permalink: /:month-:day-:year/:title.html
+markdown    : kramdown
+highlighter : rouge
+
+source: ./
+destination: ./_site
+
+# Sass configuration
+sass:
+  sass_dir: assets/scss
+  style: compressed # expanded
+
+# Author settings
+author:
+  name     : "redfast00"
+  job      : "Programmer/Hacker"
+  bio      : ""
+  thumb    : /images/author.jpg
+  email    : redfast00@gmail.com
+  url      : https://redfast00.github.io
+  github   : https://github.com/redfast00
+  twitter  : http://twitter.com/redfast00
+  facebook : none
+  linkedin : none
+
+# social settings
+og_locale: "en_US"
+twitter_card: "summary_large_image"
+twitter_site: "@redfast00"
+
 gems:
-    - jekyll-gist
-    - jekyll-sitemap
-whitelist:
-  - jekyll-coffeescript
-  - jekyll-gist
-  - jekyll-mentions
+  - bourbon
   - jekyll-paginate
-  - jekyll-redirect-from
+  - jekyll-gist
   - jekyll-sitemap
-lsi: false
-safe: true
-incremental: false
-highlighter: rouge
-gist:
-    noscript: false
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
