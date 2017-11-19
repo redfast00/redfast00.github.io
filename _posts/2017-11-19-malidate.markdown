@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "Malidate: a server and client to execute attacks with malformed HTTP requests"
+date:   2017-11-19 00:00:00 +0000
+category: Hacking
+tags: [HTTP]
+---
+# What is malidate?
+
+A few weeks ago, I read the whitepaper [Cracking the Lens: Targeting HTTP's Hidden Attack-Surface](https://portswigger.net/kb/papers/CrackingTheLens-whitepaper.pdf).
+In that paper, the author describes how "transparent systems" (like caching proxies, ...) can be exploited
+to lead to server side request forgery (SSRF). The author chooses to use Burpsuite, a closed-source Java application with plugin support, to find vulnerabilities.
+The Burpsuite client is a proxy that modifies requests and communicates with Burpsuite Collaborator.
+Burpsuite Collaborator is a server that listens for and logs all incoming HTTP, HTTPS and DNS requests.
+If a server is vulnerable to SSRF, the server will connect to the Collaborator server, and the request will get logged.
+Later on, the client will ask the server what requests got logged, and will then tell the user what sites are vulnerable  to what attack.
+Malidate is an opensource alternative to the Burpsuite Collaborator server, malidate-mitmproxy is an opensource plugin for mitmproxy that allows for modifying HTTP requests to exploit these attacks.
+
+# How does it work?
+
+![Diagram of malidate](/assets/images/malidate_diagram.png)
+
+# Security
+
+The malidate server can be uses by multiple clients. Of course, you don't want other
+clients to see what you did with the malidate server. In order to solve this,
+at startup, a client generates a 16-character long random alphanumeric string. Every
+request it makes is then prefixed by that random string. When a client then needs to
+get the logs from the malidate server, it asks for all logs beginning with that string.
+This string is mandatory and also has a fixed length (so you can't just ask for all logs
+beginning with 'a' and so forth).
+
+# Server requirements
+
+The server should have a wildcard HTTPS certificate and a domainname. It should whitelist
+ports 53 (UDP and TCP), 80 (TCP) and 443 (TCP) in the firewall.
+
+# Where can I find it?
+
+Over here: [malidate](https://github.com/redfast00/malidate) and [malidate-mitmproxy](https://github.com/malidate-mitmproxy).
