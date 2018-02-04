@@ -72,3 +72,76 @@ View my publicly-auditable identity here: https://keybase.io/redfast00
 
 ==================================================================
 
+==================================================================
+https://keybase.io/redfast00
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://redfast00.github.io
+  * I am redfast00 (https://keybase.io/redfast00) on keybase.
+  * I have a public key with fingerprint E85B C87D 7C85 6A21 E536  C43C 5946 E0E3 4FD0 553C
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101fe7eb6f89c674d590db86a78ff92d5a15a0368178078b9c4a67de2839959ded60a",
+      "fingerprint": "e85bc87d7c856a21e536c43c5946e0e34fd0553c",
+      "host": "keybase.io",
+      "key_id": "5946e0e34fd0553c",
+      "kid": "0101fe7eb6f89c674d590db86a78ff92d5a15a0368178078b9c4a67de2839959ded60a",
+      "uid": "0c4ac16b5b3c2726c23e8e3e5045ab19",
+      "username": "redfast00"
+    },
+    "service": {
+      "hostname": "redfast00.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1517775746,
+  "expire_in": 157680000,
+  "prev": "b53c68ebd7c1b4f5deebc71dab06de7b44a485a40bfaea89ea6dc2b031483cb6",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUm1QVFUY3gU2PsaMRcYmUD5uMpgC3rv3ewcxR5CZCCE0sEjXe+49l72x7F3v
+Lt8sRdPuKEnUaMioMalgiJZDjI7EDIFgMvJhTma5CkNh0xJCfqWOjta9mn+afnb+
+nDnPeZ7nPO973o+eDdSF6N9YOzmV893rqfrhaaB7s7zYW40AWahEzNVIMXy8QZsA
+nS5LsSQgZgTFUEyENASUyLA8RRMCyaICYCiOZkSRNQkkh5EcilMMRjMozQCWJziK
+FqCJwVmWZAUoUCiHJCGiZC+CikOR7C7VFjIk4BlaoHmGpDgTBkmc4gmcJ1mCgijE
+CVFASRLnVaFVdmoKNRzgnDBFklVMPVgex/sP/v+cu/SJnXrLYxQgAc6baBPFm3DI
+QBySKEFyAGM1ohMqdq4EqmwFCiLndKEo4k5CVLhM4qHWWa2Uf1NSiiSXtRQ8qcuh
+yC6Zl20qwepyOZxmzcBV6dAU5RBY/vGyAMkuqP1UFWVQcUqyHTFjKpN3SZo5RmI0
+TZM0QSUhsMIhKdAiaQySphhUXdo7sAwxb0GA2jKKgUD9BwwQIilACHgaEziAUgKk
+AUFwBENyBApEDnIMCzlK4E0AxTGCwXlAIVp5W+0yYmbVnFyRGtMpFdk5V6kCEXfY
+9gA8SKcP0S1eGB/kLxxy13jejv+VGkx9OoOGAG0AdWGh4U+RghPhOs/SmPxV9UEr
+7BOlXElm2I99X87ACwmBp+atD7V4xe7Tt5Z6T/xMzJ4PmXpleSPOWuoeLZs07Lj+
+zsQSNCJw/MXyF7wnS9rmG+KZs1b/spZ1a250LcjuKT+dOBaaL8pp2MQQ5xsD2z3J
+vQc9uSN0rz6sbtMW0rO1du/dgHBdX+a9KptjZ0f7+Mrf0pWGtRdjPrBs+MvbbThf
+VfV+T/Ci8Yf+q8Mb0MrINd9GsGMRI9uu+Pb05/hHplsK2pttsfX5S3B03cc3Kp45
+UFuWoitohpXzoqLNm6JrDubx6f25b/1+rfYrctaq5Opjb8Z0BDf1z2ae25e8OfMX
+Y7PoG2ifizXu+fBSVhw/mdFb15Byv+Tdo8+1DmRu9P7RlP3T5zFfn/3si4F9R64f
+yjj+UD7gz3u5t49rRLDC5tVthcGNnfTeXWlZVEviXE7bhfDR3umdo7Ubfa3WW2Bl
+1u5VnqThhGtupkNJNdSs/0HfuuDkjue7bi+kVkQ1FtuQXdGj4VReJzkT19UdllON
+Vn/y0r2ZS0d1iXGv9mCDxivnuPcuz/maYqWoJqOyevmdu9mn7rRejT2W7BbPKD45
+OiNt6mbra/4zi9P3G/80Hap4NPpgoKH4SNJ+g3vOfniufvBi9WY6cj6+O760KPn2
+IiMfmjdre3C48/6nl49FftNSm54w9P1xZJt+JG/6bw==
+=U+nf
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/redfast00
+
+==================================================================
+
