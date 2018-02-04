@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-I am a self-educated hacker, coder and overall computer geek.
-I know a few programming languages (C, PHP, Python, JavaScript, Lua and TI-BASIC) and have used Bootstap and JQuery. 
-I (some) have experience using <a href="https://kivy.org">Kivy</a> for mobile app development. I received a <a href="https://freecodecamp.com/redfast00/front-end-certification">Freecodecamp front-end certificate</a>.
+I am hacker, coder and overall computer geek studying at Ghent University.
+I know a few programming languages (Python, Java, C, JavaScript, Lua and TI-BASIC) and have used Bootstap, JQuery and Flask. 
+I received a <a href="https://freecodecamp.com/redfast00/front-end-certification">Freecodecamp front-end certificate</a> in 2016. I competed in and won the Belgian Hackerolympiad 2017.
 
   <a target="_blank" href="http://github.com/redfast00"><i class="fa fa-github"></i> GitHub</a>
 
