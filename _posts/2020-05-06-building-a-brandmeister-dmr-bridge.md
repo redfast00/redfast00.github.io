@@ -63,6 +63,8 @@ packets destined for a configured talk group. Each audio packet received from th
 consists of three forward error corrected AMBE frames. Each frame is 9 bytes (72 bits) long,
 but I saw most AMBE decoders take 49-bit packets. This puzzled me for a while, but
 I eventually figured out the 72 bit packets are still wrapped in Forward Error Correction.
+The BrandMeister wiki calls this "mode 33", but I didn't really find any information about this
+anywhere online.
 
 I then removed the FEC with some code adapted from [dmr_utils](https://github.com/n0mjs710/dmr_utils/).
 This turns the packets from 72 bits long into 49 bits long packets.
