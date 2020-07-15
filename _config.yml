@@ -11,7 +11,7 @@ repo: http://github.com/heiswayi/thinkspace
 twitter_username: "redfast00"
 
 # Build settings
-permalink: /:month-:day-:year/:title.html
+permalink: /:year-:title.html
 markdown    : kramdown
 highlighter : rouge
 
