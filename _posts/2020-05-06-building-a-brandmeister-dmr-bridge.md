@@ -94,8 +94,10 @@ effects applied on this audio stream will sound better.
 A small Ruby application then sends this to the Mumble server (with the
 help of the mumble-ruby library).
 
-That concludes the whole setup of bridging DMR to Mumble. If you have any questions, remarks
-or find this article useful, please send me an email.
+That concludes the whole setup of bridging DMR to Mumble. The repositories are [here for the SEA protocol](https://github.com/redfast00/brandmeister-dmr-sea)
+and [here for the Open DMR terminal protocol](https://github.com/redfast00/brandmeister-dmr-opendmr). I recommend using the SEA protocol repo if at all possible (it has better documentation and setup instructions).
+
+If you have any questions, remarks or find this article useful, please send me an email.
 
 73,
 ON3WPI
